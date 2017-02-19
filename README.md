@@ -110,6 +110,14 @@ The source points for the perspective transform are chosen in a trapezoidal shap
 
 An image with straight road lanes was used to calibrate the source and destination points and ensure the lanes are parallel in the warped output. This is then applied with confidence to subsequent images.
 
+A Morphological Transformation is applied to the binary warped image. It is very effective at removing noise. This is especially evident in the harder challenge video. 
+
+```
+#Clearing noise in binary_warped
+small_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (7, 7))
+binary_warped = cv2.morphologyEx(noisy_warped, cv2.MORPH_OPEN, small_kernel)
+```
+
 ![alt text][image6]
 
 ![alt text][image7]
@@ -282,7 +290,7 @@ The final image clearly shows a correctly implemented left lane but incorrect ri
 
 The pipeline above is created for the project video. The harder challenge video is not required for project submission, but nevertheless provides an interesting insight into the limitations and strengths of the pipeline. The images below are from the harder challenge video.
 
-The pipeline struggles to provide a good result with the harder challenge video. The tight road bends suggested that a very wide ROI is required for the perspective transform.
+The pipeline struggles to provide a good result with the harder challenge video. The tight road bends suggested that a very wide or dynamic ROI is required for the perspective transform.
 
 ![Please watch harder_challenge_output.mp4][video3]
 
@@ -298,7 +306,7 @@ The combination image has correctly detected the lanes, but the noise is concern
 
 ![alt text][image22]
 
-Here it is possible to see that the ROI is slightly problematic. In later images when the road turns sharply, the perspective image only picks up a small portion of lane line with much added noise. If the width of the ROI is increased, the tree and ground coverage cause havoc in the warped binary image.
+Here it is possible to see that the ROI is slightly problematic. In later images when the road turns sharply, the perspective image only picks up a small portion of lane line with much added noise. If the width of the ROI is increased, the tree and ground coverage cause havoc in the warped binary image. This is somewhat reduced by the noise reduction method discussed earlier.
 
 ![alt text][image23]
 
