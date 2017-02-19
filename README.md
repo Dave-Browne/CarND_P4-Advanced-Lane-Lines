@@ -47,6 +47,8 @@ NOTE: The IPython notebook `Advanced-Lane-Lines.ipynb` contains the code laid ou
 [image26]: ./output_images/hchal_lanes.png "Harder Challenge Lanes"
 
 [video1]: ./project_output.mp4 "Output Video"
+[video2]: ./challenge_output.mp4 "Challenge Video"
+[video3]: ./harder_challenge_output.mp4 "Harder Challenge Video"
 
 ## Camera Calibration
 
@@ -236,13 +238,15 @@ else:
 
 Below is the result of the pipeline on project_video.mp4
 
-![alt text][video1]
+![Please watch project_output.mp4][video1]
 
 ## Challenge Video
 
 The pipeline above is created for the project video. The challenge video is not required for project submission, but nevertheless provides an interesting insight into the limitations and strengths of the pipeline. The images below are from the challenge video.
 
 The challenge video works quite well with the pipeline, but has a few areas for improvement, such as the first black mark on the far right and the shadow under the bridge.
+
+![Please watch challenge_output.mp4][video2]
 
 The gradient binary images detect too much information here. The barrier on the far left and changes in road surface to the right of both lanes are detected. 
 
@@ -279,6 +283,8 @@ The final image clearly shows a correctly implemented left lane but incorrect ri
 The pipeline above is created for the project video. The harder challenge video is not required for project submission, but nevertheless provides an interesting insight into the limitations and strengths of the pipeline. The images below are from the harder challenge video.
 
 The pipeline struggles to provide a good result with the harder challenge video. The tight road bends suggested that a very wide ROI is required for the perspective transform.
+
+![Please watch harder_challenge_output.mp4][video3]
 
 The gradient binary images are not affected by the shadows and excellently detect both lanes. The trees, however, are clearly a problem.
 
