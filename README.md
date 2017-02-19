@@ -288,32 +288,32 @@ The pipeline struggles to provide a good result with the harder challenge video.
 
 The gradient binary images are not affected by the shadows and excellently detect both lanes. The trees, however, are clearly a problem.
 
-![alt text][image13]
+![alt text][image20]
 
 The H channel detects the left lane and S channel the right lane. THe L channel thresholds can also be changed to detect the right lane, but this adds no value. The combination, dominated by the S channel, fully detects the right lane and partially the left lane (not the shadowed portion).
 
-![alt text][image14]
+![alt text][image21]
 
 The combination image has correctly detected the lanes, but the noise is concerning, especially just outside the right lane.
 
-![alt text][image15]
+![alt text][image22]
 
 Here it is possible to see that the ROI is slightly problematic. In later images when the road turns sharply, the perspective image only picks up a small portion of lane line with much added noise. If the width of the ROI is increased, the tree and ground coverage cause havoc in the warped binary image.
 
-![alt text][image16]
+![alt text][image23]
 
 The histogram is very close to correct, and the margin around the previous curve should pick up the lane base.
 
-![alt text][image17]
+![alt text][image24]
 
 The windows quickly detect the lane lines. The left lane correclty identifies the entire lane line through the shadows. The right lane line gets drawn to the right by the noise in the top right corner.
 
-![alt text][image18]
+![alt text][image25]
 
 The final image shows a good detection of the lanes.
 
-![alt text][image19]
+![alt text][image26]
 
 ## Future Improvements
 
-It is evident that creating a pipeline using these computer vision methods to satisfy all road conditions is close to impossible. The value of machine learning to learn road conditions and generalize a model is probably the best way to make an solution that can be used in self driving cars.
+It is evident that creating a pipeline using these computer vision methods to satisfy all road conditions is close to impossible. The value of machine learning to learn road conditions and generalize a model is probably the best way to make an solution that can be used in self driving cars. Deep Learning is the answer.
